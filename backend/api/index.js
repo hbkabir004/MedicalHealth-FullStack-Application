@@ -44,5 +44,5 @@ app.listen(PORT, () => {
 
 // Base route
 app.get("/", (req, res) => {
-  res.send(`API is running on port ${PORT}`);
+  res.send(`API is running on VERCEL !`);
 });
