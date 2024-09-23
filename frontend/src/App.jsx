@@ -1,12 +1,17 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
+
 function App() {
   return (
-    <div className="h-screen flex justify-center items-center">
-      <h1 className="text-4xl font-bold">
-        DotpotIT React.js Frontend App
-      </h1>
-    </div>
-
-  )
+    <Router>
+      <Routes>
+        {/* Define your routes here */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
