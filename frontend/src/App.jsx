@@ -1,12 +1,12 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import LoginPage from './builder/components/LoginPage';
 import LandingPage from './pages/LandingPage';
-import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Define your routes here */}
+        {/* Define the routes here */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
@@ -15,3 +15,6 @@ function App() {
 }
 
 export default App;
+
+
+
