@@ -24,7 +24,7 @@ const Nav = () => {
                                 href="/"
                                 aria-label="Menu1"
                                 title="Menu1"
-                                className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
+                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
                             >
                                 Menu1
                             </a>
@@ -34,7 +34,7 @@ const Nav = () => {
                                 href="/"
                                 aria-label="Menu2"
                                 title="Menu2"
-                                className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
+                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
                             >
                                 Menu2
                             </a>
@@ -44,7 +44,7 @@ const Nav = () => {
                                 href="/"
                                 aria-label="Menu3"
                                 title="Menu3"
-                                className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
+                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
                             >
                                 Menu3
                             </a>
@@ -54,9 +54,19 @@ const Nav = () => {
                                 href="/"
                                 aria-label="Menu4"
                                 title="Menu4"
-                                className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
+                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
                             >
                                 Menu4
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/"
+                                aria-label="Menu5"
+                                title="Menu5"
+                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
+                            >
+                                Menu5
                             </a>
                         </li>
                     </ul>
@@ -64,9 +74,9 @@ const Nav = () => {
                 <ul className="flex items-center hidden space-x-8 lg:flex">
                     <li>
                         <a
-                            href="/"
-                            aria-label="Sign in"
-                            title="Sign in"
+                            href="/login"
+                            aria-label="Login"
+                            title="Login"
                             className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 uppercase"
                         >
                             Login
@@ -74,7 +84,7 @@ const Nav = () => {
                     </li>
                     <li>
                         <a
-                            href="/"
+                            href="/register"
                             className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-white transition duration-200 rounded-full shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none uppercase"
                             aria-label="Register"
                             title="Register"
@@ -87,7 +97,6 @@ const Nav = () => {
                         <img
                             loading="lazy"
                             src="/Line.png"
-                            // src="../../public/Line.png"
                             className="object-contain shrink-0 self-stretch my-auto w-0.5 aspect-[0.08]"
                             alt=""
                         />
@@ -96,12 +105,13 @@ const Nav = () => {
                         <img
                             loading="lazy"
                             src="/android-settings.png"
-                            // src="../../public/android-settings.png"
                             className="object-contain shrink-0 self-stretch my-auto aspect-[0.97] w-[29px]"
                             alt="Language selector"
                         />
                     </li>
                 </ul>
+
+                {/* For Small Devices */}
                 <div className="lg:hidden">
                     <button
                         aria-label="Open Menu"
@@ -125,7 +135,7 @@ const Nav = () => {
                         </svg>
                     </button>
                     {isMenuOpen && (
-                        <div className="absolute top-0 left-0 w-full">
+                        <div className="absolute z-50 top-0 left-0 w-full">
                             <div className="p-5 bg-white border rounded shadow-sm">
                                 <div className="flex items-center justify-between mb-4">
                                     <div>
@@ -202,16 +212,26 @@ const Nav = () => {
                                         <li>
                                             <a
                                                 href="/"
+                                                aria-label="Menu5"
+                                                title="Menu5"
+                                                className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
+                                            >
+                                                Menu5
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/login"
                                                 aria-label="Login"
                                                 title="Login"
-                                                className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 hover:font-bold"
+                                                className="text-xl font-semibold tracking-wide md:text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 hover:font-bold text-blue-700"
                                             >
                                                 Login
                                             </a>
                                         </li>
                                         <li>
                                             <a
-                                                href="/"
+                                                href="/register"
                                                 className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-white transition duration-200 pill shadow-md bg-green-500 focus:shadow-outline focus:outline-none"
                                                 aria-label="Register"
                                                 title="Register"
