@@ -77,7 +77,7 @@ const Nav = () => {
                             href="/login"
                             aria-label="Login"
                             title="Login"
-                            className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 uppercase"
+                            className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 uppercase text-lg"
                         >
                             Login
                         </a>
@@ -85,7 +85,7 @@ const Nav = () => {
                     <li>
                         <a
                             href="/register"
-                            className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-white transition duration-200 rounded-full shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none uppercase"
+                            className="inline-flex items-center justify-center h-12 px-10 font-semibold tracking-wide text-white transition duration-200 rounded-full shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none uppercase text-lg"
                             aria-label="Register"
                             title="Register"
                         >

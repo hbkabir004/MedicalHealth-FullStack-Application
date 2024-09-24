@@ -15,12 +15,12 @@ export const Banner = () => {
 
                     <div className="flex justify-start mt-14 md:text-2xl text-lg uppercase max-md:mt-10">
                         {/* <Link> */}
-                        <p className="font-semibold mr-6 my-auto text-green-700">
+                        <p className="font-semibold mr-6 my-auto text-green-600 hover:text-green-500 cursor-pointer">
                             More Info
                         </p>
                         {/* </Link> */}
                         <Link to="register">
-                            <button className="px-9 py-3.5 text-center text-white bg-sky-500 rounded-3xl shadow-2xl w-fit max-md:px-5 uppercase">
+                            <button className="px-9 py-3.5 text-center text-white bg-sky-400 rounded-3xl shadow-2xl w-fit max-md:px-5 hover:bg-sky-600 uppercase">
                                 Register now
                             </button>
                         </Link>
