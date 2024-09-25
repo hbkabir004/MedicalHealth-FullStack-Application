@@ -22,7 +22,7 @@ function MainFooter() {
   ];
 
   return (
-    <footer className="px-4 py-5 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <footer className="py-5 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
       <div className="flex gap-5 max-md:flex-col">
         <div className="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
           <div className="grow max-md:mt-10 max-md:max-w-full">

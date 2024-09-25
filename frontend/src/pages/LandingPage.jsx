@@ -1,5 +1,4 @@
 import { Banner } from "../components/Banner";
-import ClinicFacilities from "../components/ClinicFacilities/ClinicFacilities";
 import Doctors from "../components/Doctors";
 import MainFooter from "../components/Footer/Footer";
 import Nav from "../components/Nav";
@@ -19,7 +18,7 @@ const LandingPage = () => {
                 {/* <BusinessSolution /> */}
                 <StatisticsSection />
             </div>
-            <ClinicFacilities />
+            {/* <ClinicFacilities /> */}
             <SpecialtySection />
             <Doctors />
             <Services />
