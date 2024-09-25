@@ -1,7 +1,9 @@
 import { Banner } from "../components/Banner";
+import ClinicFacilities from "../components/ClinicFacilities/ClinicFacilities";
 import Doctors from "../components/Doctors";
-import FooterContainer from "../components/Footer/FooterContainer";
+import MainFooter from "../components/Footer/Footer";
 import Nav from "../components/Nav";
+import OurClinics from "../components/OurClinics/OurClinics";
 import ReadyToStart from "../components/ReadyToStart";
 import Services from "../components/Services";
 import SpecialtySection from "../components/SpecialtySection/SpecialtySection";
@@ -11,18 +13,24 @@ import Testimonials from "../components/Testimonials";
 const LandingPage = () => {
     return (
         <div>
-            <Nav />
-            <Banner />
-            {/* <BusinessSolution /> */}
-            <StatisticsSection />
+            <div className="bg-[url('/bg/header-bg.png')] bg-contain bg-no-repeat bg-right-top">
+                <Nav />
+                <Banner />
+                {/* <BusinessSolution /> */}
+                <StatisticsSection />
+            </div>
+            <ClinicFacilities />
             <SpecialtySection />
             <Doctors />
             <Services />
             <Testimonials />
             {/* <ContactUs /> */}
             <ReadyToStart />
-            <FooterContainer />
 
+            <div className="bg-[url('/bg/deco.png')] bg-cover bg-center">
+                <OurClinics />
+                <MainFooter />
+            </div>
         </div>
     );
 };
