@@ -1,73 +1,233 @@
-import React from 'react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-const facilitiesData = [
-  {
-    id: 1,
-    title: 'Modern Dental Care',
-    description: 'Pellentesque ac bibendum tortor, vel blandit nulla. Nulla eget lobortis lacus.',
-    img: 'https://via.placeholder.com/300', // Replace with your image URL
-  },
-  {
-    id: 2,
-    title: 'Advanced Surgery Rooms',
-    description: 'Pellentesque ac bibendum tortor, vel blandit nulla. Nulla eget lobortis lacus.',
-    img: 'https://via.placeholder.com/300', // Replace with your image URL
-  },
-  {
-    id: 3,
-    title: 'Laboratory Services',
-    description: 'Pellentesque ac bibendum tortor, vel blandit nulla. Nulla eget lobortis lacus.',
-    img: 'https://via.placeholder.com/300', // Replace with your image URL
-  },
-];
+import React from "react";
 
 const ClinicFacilities = () => {
-  return (
-    <section className="relative bg-gray-50 p-10">
-      {/* Background circles */}
-      <div className="absolute top-0 left-0 w-48 h-48 bg-gradient-to-r from-green-200 to-blue-300 rounded-full opacity-50"></div>
-      <div className="absolute top-10 left-10 text-5xl font-bold text-gray-900 z-10">Clinic Facilities</div>
+  const facilitiesData = [
+    {
+      id: 1,
+      title: 'Modern Dental Care',
+      description: 'Pellentesque ac bibendum tortor, vel blandit nulla. Nulla eget lobortis lacus.',
+      img: 'https://via.placeholder.com/300', // Replace with your image URL
+    },
+    {
+      id: 2,
+      title: 'Advanced Surgery Rooms',
+      description: 'Pellentesque ac bibendum tortor, vel blandit nulla. Nulla eget lobortis lacus.',
+      img: 'https://via.placeholder.com/300', // Replace with your image URL
+    },
+    {
+      id: 3,
+      title: 'Laboratory Services',
+      description: 'Pellentesque ac bibendum tortor, vel blandit nulla. Nulla eget lobortis lacus.',
+      img: 'https://via.placeholder.com/300', // Replace with your image URL
+    },
+  ];
 
-      {/* SwiperJS integration */}
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-        spaceBetween={30}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        className="relative z-20 mt-16"
-      >
-        {facilitiesData.map((facility) => (
-          <SwiperSlide key={facility.id}>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={facility.img} alt={facility.title} className="w-full h-40 object-cover" />
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{facility.title}</h3>
-                <p className="text-gray-600">{facility.description}</p>
-                <button className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
-                  See Detail
-                </button>
+  return (
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+          quick, brown fox jumps over a lazy dog
+        </h2>
+        <p className="text-base text-gray-700 md:text-lg">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque rem aperiam, eaque ipsa quae.
+        </p>
+      </div>
+      <div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">
+                  The doctor said
+                </h6>
+                <p className="text-sm text-gray-900">
+                  Sportacus andrew weatherall goose Refined gentlemen super
+                  mario des lynam alpha trion zap rowsdower.
+                </p>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">
+                  Skate ipsum dolor
+                </h6>
+                <p className="text-sm text-gray-900">
+                  Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">They urge you</h6>
+                <p className="text-sm text-gray-900">
+                  A flower in my garden, a mystery in my panties. Heart attack
+                  never stopped old Big Bear.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">
+                  Baseball ipsum dolor
+                </h6>
+                <p className="text-sm text-gray-900">
+                  Bro ipsum dolor sit amet gaper backside single track, manny
+                  Bike epic clipless. Schraeder drop gondy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">
+                  The doctor said
+                </h6>
+                <p className="text-sm text-gray-900">
+                  Sportacus andrew weatherall goose Refined gentlemen super
+                  mario des lynam alpha trion zap rowsdower.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
 
-      {/* "See All" Link */}
-      <a href="#" className="text-blue-600 hover:underline absolute right-0 top-5">
-        SEE ALL →
-      </a>
-    </section>
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">
+                  Skate ipsum dolor
+                </h6>
+                <p className="text-sm text-gray-900">
+                  Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">They urge you</h6>
+                <p className="text-sm text-gray-900">
+                  A flower in my garden, a mystery in my panties. Heart attack
+                  never stopped old Big Bear.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/"
+          aria-label="View Item"
+          className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        >
+          <div className="flex flex-col h-full">
+            <img
+              src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="object-cover w-full h-48"
+              alt=""
+            />
+            <div className="flex-grow border border-t-0 rounded-b">
+              <div className="p-5">
+                <h6 className="mb-2 font-semibold leading-5">
+                  Baseball ipsum dolor
+                </h6>
+                <p className="text-sm text-gray-900">
+                  Bro ipsum dolor sit amet gaper backside single track, manny
+                  Bike epic clipless. Schraeder drop gondy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div className="text-center">
+        <a
+          href="/"
+          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
   );
 };
 

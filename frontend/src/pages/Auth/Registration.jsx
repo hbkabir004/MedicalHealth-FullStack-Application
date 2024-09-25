@@ -8,9 +8,9 @@ const Registration = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
-    const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, signInWithGithub, signInWithFacebook } = useContext(AuthContext)
+    const { createUser, updateUserProfile, verifyEmail, signInWithGoogle } = useContext(AuthContext)
 
-    // // Signup using Email & Pass
+    // Signup using Email & Pass
     const handleSubmit = event => {
         event.preventDefault()
 
@@ -19,7 +19,6 @@ const Registration = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoURL = form.photo.value;
-        // console.log(name, email, password, photoURL);
 
         //1. Create Account
         createUser(email, password)
@@ -64,20 +63,7 @@ const Registration = () => {
             navigate(from, { replace: true })
         })
     }
-    //GitHub Signin
-    const handleGithubSignin = () => {
-        signInWithGithub().then(result => {
-            console.log(result.user);
-            navigate(from, { replace: true })
-        })
-    }
-    //Facebook Signin
-    const handleFacebookSignin = () => {
-        signInWithFacebook().then(result => {
-            console.log(result.user);
-            navigate(from, { replace: true })
-        })
-    }
+
 
     return (
         <div className='flex justify-center items-center pt-8 mb-20'>
@@ -94,7 +80,7 @@ const Registration = () => {
                 >
                     <div className='space-y-4'>
                         <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
+                            <label htmlFor='name' className='block mb-2 text-sm'>
                                 Full Name
                             </label>
                             <input
@@ -106,19 +92,7 @@ const Registration = () => {
                                 data-temp-mail-org='0'
                             />
                         </div>
-                        <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
-                                Photo URL
-                            </label>
-                            <input
-                                type='text'
-                                name='photo'
-                                id='photo'
-                                placeholder='Enter Your Photo URL Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
-                                data-temp-mail-org='0'
-                            />
-                        </div>
+
                         <div>
                             <label htmlFor='email' className='block mb-2 text-sm'>
                                 Email address

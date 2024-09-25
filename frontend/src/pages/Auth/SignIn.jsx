@@ -10,7 +10,7 @@ const SignIn = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const { signin, resetPassword, signInWithGoogle, signInWithFacebook, signInWithGithub } = useContext(AuthContext)
+    const { signin, signInWithGoogle } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -34,30 +34,6 @@ const SignIn = () => {
             console.log(result.user)
             navigate(from, { replace: true })
         })
-    }
-
-    //GitHub Signin
-    const handleGithubSignin = () => {
-        signInWithGithub().then(result => {
-            console.log(result.user);
-            navigate(from, { replace: true })
-        })
-    }
-    //Facebook Signin
-    const handleFacebookSignin = () => {
-        signInWithFacebook().then(result => {
-            console.log(result.user);
-            navigate(from, { replace: true })
-        })
-    }
-
-    //Reset Pass
-    const handleReset = () => {
-        resetPassword(userEmail)
-            .then(() => {
-                toast.success('Reset link has been sent, please check email')
-            })
-            .catch(error => toast.error(error.message))
     }
 
     return (

@@ -1,16 +1,9 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import { AuthContext } from "../contexts/UserContext";
+import { useState } from "react";
+import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const AuthNav = ({ route }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { user, logout } = useContext(AuthContext);
-    const handleLogout = () => {
-        logout()
-            .then(toast.warning('User logged out!'))
-            .catch(error => console.log(error))
-    }
+
     return (
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div className="relative flex items-center justify-between">
@@ -26,102 +19,18 @@ const Nav = () => {
                             Medical
                         </span>
                     </a>
-                    <ul className="flex items-center hidden space-x-8 lg:flex">
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Menu1"
-                                title="Menu1"
-                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
-                            >
-                                Menu1
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Menu2"
-                                title="Menu2"
-                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
-                            >
-                                Menu2
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Menu3"
-                                title="Menu3"
-                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
-                            >
-                                Menu3
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Menu4"
-                                title="Menu4"
-                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
-                            >
-                                Menu4
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Menu5"
-                                title="Menu5"
-                                className="text-lg font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4"
-                            >
-                                Menu5
-                            </a>
-                        </li>
-                    </ul>
+
                 </div>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
-                    <li>
-                        {
-                            user?.uid ?
-                                <>
-                                    <span className='mr-5 text-deep-purple-accent-400 font-semibold'>{user?.displayName}</span>
-                                    <button
-                                        onClick={handleLogout}
-                                        className='inline-flex items-center justify-center h-12 px-10 font-semibold tracking-wide text-white transition duration-200 rounded-full shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none uppercase text-lg'>Log out</button>
-                                </>
-                                :
-                                <>
-                                    <Link
-                                        to="/login"
-                                        aria-label="Login"
-                                        title="Login"
-                                        className="font-semibold tracking-wide text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 uppercase text-lg mr-10"
-                                    >
-                                        Login
-                                    </Link>
-                                    <Link
-                                        to="/register"
-                                        className="inline-flex items-center justify-center h-12 px-10 font-semibold tracking-wide text-white transition duration-200 rounded-full shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none uppercase text-lg"
-                                        aria-label="Register"
-                                        title="Register">
 
-                                        Register
-                                    </Link>
-                                </>
-                        }
-                    </li>
-                    {user?.photoURL ?
-
-                        <img
-                            aria-label={user?.displayName}
-                            title={user?.displayName}
-                            className='w-10 h-10 rounded-full'
-                            src={user?.photoURL}>
-                        </img>
-                        : ""
-                    }
-
-
+                    <Link
+                        to={`/${route}`}
+                        aria-label={route}
+                        title={route}
+                        className="text-xl font-semibold tracking-wide md:text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 hover:font-bold text-blue-700 uppercase"
+                    >
+                        {route}
+                    </Link>
                     <li>
                         <img
                             loading="lazy"
@@ -138,6 +47,7 @@ const Nav = () => {
                             alt="Language selector"
                         />
                     </li>
+
                 </ul>
 
 
@@ -181,6 +91,7 @@ const Nav = () => {
                                             </span>
                                         </a>
                                     </div>
+
                                     <div>
                                         <button
                                             aria-label="Close Menu"
@@ -249,26 +160,42 @@ const Nav = () => {
                                                 Menu5
                                             </a>
                                         </li>
-                                        <li>
-                                            <a
-                                                href="/login"
-                                                aria-label="Login"
-                                                title="Login"
-                                                className="text-xl font-semibold tracking-wide md:text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 hover:font-bold text-blue-700"
-                                            >
-                                                Login
-                                            </a>
+
+                                        <li className="text-center">
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        <h1 className='mr-5 text-xl my-4 text-blue-800 font-semibold'>User Name: {user?.displayName}</h1>
+                                                        <button
+                                                            onClick={handleLogout}
+                                                            className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-white transition duration-200 pill shadow-md bg-green-500 focus:shadow-outline focus:outline-none">
+                                                            Log out
+                                                        </button>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <Link
+                                                            to="/login"
+                                                            aria-label="Login"
+                                                            title="Login"
+                                                            className="text-xl font-semibold tracking-wide md:text-black transition-colors duration-200 hover:text-blue-500 hover:underline hover:underline-offset-8 hover:decoration-4 hover:font-bold text-blue-700"
+                                                        >
+                                                            Login
+                                                        </Link>
+
+                                                        <Link
+                                                            to="/register"
+                                                            className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-white transition duration-200 pill shadow-md bg-green-500 focus:shadow-outline focus:outline-none"
+                                                            aria-label="Register"
+                                                            title="Register"
+                                                        >
+                                                            Register
+                                                        </Link>
+                                                    </>
+                                            }
                                         </li>
-                                        <li>
-                                            <a
-                                                href="/register"
-                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-white transition duration-200 pill shadow-md bg-green-500 focus:shadow-outline focus:outline-none"
-                                                aria-label="Register"
-                                                title="Register"
-                                            >
-                                                Register
-                                            </a>
-                                        </li>
+
+
                                     </ul>
                                 </nav>
                             </div>
@@ -277,7 +204,8 @@ const Nav = () => {
                 </div>
             </div>
         </div>
+        // </div>
     );
 };
 
-export default Nav
+export default AuthNav

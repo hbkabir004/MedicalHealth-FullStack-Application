@@ -22,7 +22,7 @@ function MainFooter() {
   ];
 
   return (
-    <footer className="py-5 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
+    <footer className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="flex gap-5 max-md:flex-col">
         <div className="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
           <div className="grow max-md:mt-10 max-md:max-w-full">
@@ -66,7 +66,7 @@ function MainFooter() {
                 <div className="flex flex-col self-stretch my-auto w-full text-lg font-medium text-black max-md:mt-10">
                   <img
                     loading="lazy"
-                    src="/icons/socmed.png"
+                    src="/icons/social.png"
                     alt=""
                     className="object-contain aspect-[5.38] w-[204px] max-md:mr-1"
                   />
